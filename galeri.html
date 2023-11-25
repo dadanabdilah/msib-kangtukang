@@ -23,6 +23,9 @@
             background-color: #ffffff;
             color: #000000;
         }
+        .text-primary{
+            color: var(--warna-dua) !important;
+        }
         body{
             margin: 0px;
             padding-bottom: 0px;
@@ -33,25 +36,17 @@
         .bg-transparent{
             background: transparent !important;
         }
-        #intro{
+        #galeri{
             background-image: url(./assets/img/bg-intro.png);
             background-size: cover;
             background-repeat: no-repeat;
             padding-top: 100px;
             padding-bottom: 100px;
         }
-        #tentang {
+        #galeri .card{
             background-color: #D9D9D9;
         }
-        #layanan {
-            background-color: var(--warna-satu);
-        }
-        #layanan .card{
-            width: 220px;
-            height: 190px;
-            padding: 20px;
-        }
-        #pemesanan {
+        #lokasi {
             background-color: #D9D9D9;
         }
         footer{
@@ -72,8 +67,8 @@
                 <div class="navbar-nav ml-auto">
                     <a class="nav-link active" href="./index.html">Home <span class="sr-only">(current)</span></a>
                     <a class="nav-link" href="#tentang">Tentang</a>
-                    <a class="nav-link" href="#layanan">Layanan</a>
-                    <a class="nav-link" href="#pemesanan">Pemesanan</a>
+                    <a class="nav-link" href="./index.html#layanan">Layanan</a>
+                    <a class="nav-link" href="./index.html#pemesanan">Pemesanan</a>
                     <a class="nav-link" href="./galeri.html">Galeri</a>
                     <a class="nav-link" href="#">Masuk</a>
                 </div>
@@ -81,94 +76,61 @@
         </div>
     </nav>
 
-    <section id="intro">
-        <div class="container">
-            <div class="row mt-5">
-                <div class="col-md-6 pt-5">
-                    <h1>Platform Jasa Tukang Profesional dan Kebutuhan Bangunan Terpercaya</h1>
-                    <p>Kamu Bisa Pilih Sesuai Kebutuhanmu</p>
+    <section id="galeri">
+        <div class="container mt-4">
+            <h2 class="text-primary">Galeri Kang Tukang</h2>
+            <div class="card">
+                <div class="card-body">
                     <div class="row">
-                        <div class="col-md-6">
-                            <button class="btn shadow-sm btn-primary">Cari Tukang</button>
-                            <button class="btn shadow-sm btn-white">Jadi Mitra</button>
+                        <div class="col-md-4 mt-4">
+                            <div class="card border-0" id="card-layanan">
+                                <div class="card-body text-center">
+                                    <img src="./assets/img/galeri/tukang-bangunan 2.png"/>
+                                    <button class="btn btn-primary mt-4">Tukang Bangunan</button>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <img src="./assets/img/intro.png" alt="Intro">
-                </div>
-            </div>
-        </div>
-    </section>
+                        <div class="col-md-4 mt-4">
+                            <div class="card border-0" id="card-layanan">
+                                <div class="card-body text-center">
+                                    <img src="./assets/img/galeri/20150123_153004 1.png"/>
+                                    <button class="btn btn-primary mt-4">Tukang Cat</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mt-4">
+                            <div class="card border-0" id="card-layanan">
+                                <div class="card-body text-center">
+                                    <img src="./assets/img/galeri/las11 1.png"/>
+                                    <button class="btn btn-primary mt-4">Tukang Las</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mt-4">
+                            <div class="card border-0" id="card-layanan">
+                                <div class="card-body text-center">
+                                    <img src="./assets/img/galeri/photo-tukang-2-b3e613ef9bd2f5b43e764e35849afa15 1.png"/>
+                                    <button class="btn btn-primary mt-4">Tukang Sanitair</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mt-4">
+                            <div class="card border-0" id="card-layanan">
+                                <div class="card-body text-center">
+                                    <img src="./assets/img/galeri/Teknisi-Listrik-Profesional-Blitar-1024x684 1.png"/>
+                                    <button class="btn btn-primary mt-4">Tukang Listrik</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mt-4">
+                            <div class="card border-0" id="card-layanan">
+                                <div class="card-body text-center">
+                                    <img src="./assets/img/galeri/WhatsApp-Image-2020-03-20-at-10.53 1.png"/>
+                                    <button class="btn btn-primary mt-4">Tukang Atap</button>
+                                </div>
+                            </div>
+                        </div>
 
-    <section id="tentang">
-        <div class="container pt-5 pb-5">
-            <div class="row">
-                <div class="col-md-6">
-                    <img src="./assets/img/tentang.png" width="50%" alt="Intro">
-                </div>
-                <div class="col-md-6">
-                    <h2>Tentang Kami</h2>
-                   <p>KangTukang.com adalah platform terpercaya yang dirancang khusus untuk membantu Anda menemukan tukang sesuai dengan keahlian dan spesialisasinya. Dengan menyediakan platform lengkap dan mudah digunakan, kami berkomitmen untuk memudahkan Anda dalam segala aspek membangun, memperbaiki, dan merenovasi rumah.
-
-                    Melalui KangTukang.com, Anda dapat dengan mudah mencari tukang yang tepat untuk proyek Anda. Dengan berbagai kategori keahlian yang tersedia, termasuk tukang bangunan, tukang listrik, tukang cat, dan banyak lagi, kami memastikan bahwa Anda dapat menemukan profesional berkualitas yang sesuai dengan kebutuhan spesifik Anda.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <section id="layanan">
-        <div class="container pt-5 pb-5">
-            <h2 class="text-center">Layanan Kami</h2>
-            <div class="row">
-                <div class="col-md-4 mt-4">
-                    <div class="card" id="card-layanan">
-                        <div class="card-body">
-                            <h6 class="text-center">Tukang Bangunan</h6>
-                            <p class="text-center">Tukang melibatkan pembangunan rumah dan lainnya</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mt-4">
-                    <div class="card" id="card-layanan">
-                        <div class="card-body">
-                            <h6 class="text-center">Tukang Cat</h6>
-                            <p class="text-center">Tukang untuk mengecat rumah dan lainnya</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mt-4">
-                    <div class="card" id="card-layanan">
-                        <div class="card-body">
-                            <h6 class="text-center">Tukang Atap</h6>
-                            <p class="text-center">Tukang untuk perbaikan atap dan plafon</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4 mt-4">
-                    <div class="card" id="card-layanan">
-                        <div class="card-body">
-                            <h6 class="text-center">Tukang Sanitair</h6>
-                            <p class="text-center">Tukang untuk mengecat rumah dan lainnya.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mt-4">
-                    <div class="card" id="card-layanan">
-                        <div class="card-body">
-                            <h6 class="text-center">Tukang Las</h6>
-                            <p class="text-center">Tukang untuk pembuatan atau perbaikan kanopi dan pagar</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mt-4">
-                    <div class="card" id="card-layanan">
-                        <div class="card-body">
-                            <h6 class="text-center">Tukang Listrik</h6>
-                            <p class="text-center">Tukang untuk perbaikan listrik</p>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -176,22 +138,25 @@
     </section>
 
 
-    <section id="pemesanan">
+    <section id="lokasi">
         <div class="container pt-5 pb-5">
-            <div class="row">
+            <h2 class="text-center mb-2 text-primary">Lokasi Kantor KangTukang</h2>
+            <small><b>Jl. D.I. Panjaitan Blok B-6 Batu 7, Tanjungpinang Timur</b></small>
+            <div class="">
+                <div class="mapouter"><div class="gmap_canvas">
+                    <iframe src="https://maps.google.com/maps?q=Indonesia&amp;t=&amp;z=13&amp;ie=UTF8&amp;iwloc=&amp;output=embed" frameborder="0" scrolling="no" style="width: 100%; height: 400px;"></iframe>
+                    <style>.mapouter{position:relative;height:400px;width:100%;background:#fff;} .maprouter a{color:#fff !important;position:absolute !important;top:0 !important;z-index:0 !important;}</style>
+                    <a href="https://blooketjoin.org">blooket join</a><style>.gmap_canvas{overflow:hidden;height:400px;width:100%}.gmap_canvas iframe{position:relative;z-index:2}</style></div>
+                </div>
+            </div>
+            <div class="row mt-4">
                 <div class="col-md-6">
-                    <img src="./assets/img/pemesanan.png" width="80%" alt="Intro">
+                    <h4 class="text-primary">Tertarik dengan KangTukang ?</h4>
+                    <p class="m-0 p-0">Sekali klik saja, Anda bisa menemukan tukang yang Anda butuhkan.</p>
                 </div>
                 <div class="col-md-6">
-                    <h2 class="text-center mb-2">Pemesanan</h2>
-                    <ol>
-                        <li>Hubungi Customer Service</li>
-                        <li>Konsultasikan Rencana Anda </li>
-                        <li>Survey Lokasi Oleh Tim</li>
-                        <li>Perjanjian Akad MOU</li>
-                        <li>Pengerjaan Hingga Selesai</li>
-                        <li>Klaim Garansi dan Pembayaran</li>
-                    </ol>
+                    <button class="btn btn-primary" style="width: 150px;">Cari Tukang</button></br>
+                    <button class="btn btn-white mt-2" style="width: 150px;">Jadi Mitra Kami</button>
                 </div>
             </div>
         </div>
