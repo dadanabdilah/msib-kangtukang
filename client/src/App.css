@@ -5,6 +5,7 @@
   --warna-dua: #054384;
   --warna-tiga: #eef0e5;
   --warna-empat: #086fdd;
+  --warna-lima: #65B741
 }
 
 * {
@@ -22,7 +23,8 @@
   margin: 0 5px;
 }
 
-.btn-CariTukang:hover, .btn-Masuk:hover {
+.btn-CariTukang:hover,
+.btn-Masuk:hover {
   background-color: var(--warna-empat);
 }
 
@@ -64,4 +66,29 @@
 
 .footer {
   background-color: var(--warna-satu);
+}
+
+.galeri {
+  background-color: var(--warna-tiga);
+}
+
+.title-galeri {
+  color: var(--warna-lima);
+}
+
+.tombol-galeri {
+  color: white;
+  background-color: var(--warna-dua);
+  border-radius: 20px;
+}
+
+.tombol-galeri:hover {
+  background-color: var(--warna-empat);
+}
+
+.tombol-galeri a {
+  text-decoration: none;
+  color: white;
+  font-size: x-large;
+  font-weight: bold;
 }

@@ -26,7 +26,7 @@ export default function NavBar() {
     <>
       <Navbar
         expand="lg"
-        style={{ backgroundColor: scrolled ? "#eccb18" : "white"}}
+        style={{ backgroundColor: scrolled ? "#eccb18" : "white" }}
         fixed="top"
       >
         <Container>
@@ -34,14 +34,44 @@ export default function NavBar() {
             <Image src={logo} />
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav" >
+          <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="justify-content-end fw-semibold w-100 py-1">
-              <Nav.Link href="/#intro" style={{color: scrolled ? "white" : "black"}}>Home</Nav.Link>
-              <Nav.Link href="/#layanan" style={{color: scrolled ? "white" : "black"}}>Layanan</Nav.Link>
-              <Nav.Link href="/#testimoni" style={{color: scrolled ? "white" : "black"}}>Testimoni</Nav.Link>
-              <Nav.Link href="/#tentang" style={{color: scrolled ? "white" : "black"}}>Tentang</Nav.Link>
-              <Nav.Link href="/galeri" style={{color: scrolled ? "white" : "black"}}>Galeri</Nav.Link>
-              <Nav.Link href="#" style={{color: scrolled ? "white" : "black"}}>Cari Tukang</Nav.Link>
+              <Nav.Link
+                href="/#intro"
+                style={{ color: scrolled ? "white" : "black" }}
+              >
+                Home
+              </Nav.Link>
+              <Nav.Link
+                href="/#layanan"
+                style={{ color: scrolled ? "white" : "black" }}
+              >
+                Layanan
+              </Nav.Link>
+              <Nav.Link
+                href="/#testimoni"
+                style={{ color: scrolled ? "white" : "black" }}
+              >
+                Testimoni
+              </Nav.Link>
+              <Nav.Link
+                href="/#tentang"
+                style={{ color: scrolled ? "white" : "black" }}
+              >
+                Tentang
+              </Nav.Link>
+              <Nav.Link
+                href="/galeri"
+                style={{ color: scrolled ? "white" : "black" }}
+              >
+                Galeri
+              </Nav.Link>
+              <Nav.Link
+                href="#"
+                style={{ color: scrolled ? "white" : "black" }}
+              >
+                Cari Tukang
+              </Nav.Link>
               <Link to="#" className="btn-Masuk border border-light rounded">
                 Masuk
               </Link>

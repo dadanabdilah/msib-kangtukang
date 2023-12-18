@@ -55,7 +55,7 @@ export default function Home() {
           <Row className="justify-content-md-center m-0">
             <Col md={3} className="my-5">
               <Card className="border-0 shadow" style={{ height: "350px" }}>
-                <Card.Body style={{ padding: "0", backgroundColor: "#F3F8FF" }}>
+                <Card.Body style={{ padding: "0", backgroundColor: "&#x2190;" }}>
                   <Card.Img
                     variant="top"
                     src={tukangBangunan}
