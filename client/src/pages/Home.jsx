@@ -1,7 +1,8 @@
 import { Container, Row, Col, Image, Card, Ratio } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import NavBar from "../components/NavBar";
+import FooTer from "../components/FooTer";
 import "../App.css";
-import Footer from "../components/Footer";
 import bgPage from "../assets/img/intro.png";
 import tukangBangunan from "../assets/img/layanan/builders.jpg";
 import tukangCat from "../assets/img/layanan/painters.jpg";
@@ -17,6 +18,7 @@ import iconTentang from "../assets/img/tentang.png";
 export default function Home() {
   return (
     <>
+      <NavBar />
       {/* Home */}
       <section id="intro">
         <Container style={{ marginTop: "90px" }}>
@@ -55,7 +57,9 @@ export default function Home() {
           <Row className="justify-content-md-center m-0">
             <Col md={3} className="my-5">
               <Card className="border-0 shadow" style={{ height: "350px" }}>
-                <Card.Body style={{ padding: "0", backgroundColor: "&#x2190;" }}>
+                <Card.Body
+                  style={{ padding: "0", backgroundColor: "&#x2190;" }}
+                >
                   <Card.Img
                     variant="top"
                     src={tukangBangunan}
@@ -368,7 +372,7 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <Footer/>
+      <FooTer />
     </>
   );
 }

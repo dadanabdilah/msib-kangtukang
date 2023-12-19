@@ -37,7 +37,7 @@ export default function NavBar() {
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="justify-content-end fw-semibold w-100 py-1">
               <Nav.Link
-                href="/#intro"
+                href="/"
                 style={{ color: scrolled ? "white" : "black" }}
               >
                 Home
@@ -72,7 +72,10 @@ export default function NavBar() {
               >
                 Cari Tukang
               </Nav.Link>
-              <Link to="#" className="btn-Masuk border border-light rounded">
+              <Link
+                to="/login"
+                className="btn-Masuk border border-light rounded"
+              >
                 Masuk
               </Link>
             </Nav>

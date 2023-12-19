@@ -5,7 +5,7 @@
   --warna-dua: #054384;
   --warna-tiga: #eef0e5;
   --warna-empat: #086fdd;
-  --warna-lima: #65B741
+  --warna-lima: #65b741;
 }
 
 * {
@@ -91,4 +91,18 @@
   color: white;
   font-size: x-large;
   font-weight: bold;
+}
+
+.login {
+  background-image: url(assets/img/bg-intro.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.footerLogin {
+  background-color: #eccb18;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }

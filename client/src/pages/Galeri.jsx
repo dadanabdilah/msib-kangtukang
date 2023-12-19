@@ -1,5 +1,5 @@
 import NavBar from "../components/NavBar";
-import Footer from "../components/Footer";
+import FooTer from "../components/FooTer";
 import { Container, Card, Row, Col } from "react-bootstrap";
 import "../App.css";
 import bangunan1 from "../assets/img/galeri/bangunan1.png";
@@ -155,7 +155,7 @@ export default function Galeri() {
           </Row>
         </Container>
       </section>
-      <Footer />
+      <FooTer />
     </>
   );
 }
