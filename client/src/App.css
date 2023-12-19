@@ -1,0 +1,94 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+:root {
+  --warna-satu: #eccb18;
+  --warna-dua: #054384;
+  --warna-tiga: #eef0e5;
+  --warna-empat: #086fdd;
+  --warna-lima: #65B741
+}
+
+* {
+  font-family: "Poppins", sans-serif;
+}
+
+/* Navbar */
+.btn-Masuk,
+.btn-CariTukang {
+  text-decoration: none;
+  background-color: var(--warna-dua);
+  color: #ffffff;
+  border: 0.1rem solid #ffffff;
+  padding: 5px 20px;
+  margin: 0 5px;
+}
+
+.btn-CariTukang:hover,
+.btn-Masuk:hover {
+  background-color: var(--warna-empat);
+}
+
+.btn-JadiMitra {
+  text-decoration: none;
+  background-color: white;
+  color: var(--warna-dua);
+  border: 0.1rem solid var(--warna-dua);
+  padding: 5px 20px;
+}
+
+/* Home */
+#intro {
+  background-image: url(assets/img/bg-intro.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+#layanan {
+  background-color: var(--warna-tiga);
+}
+
+#card-divider {
+  border-top: 3px solid var(--warna-satu);
+  opacity: 100%;
+  width: 30px;
+  margin: 0 auto;
+}
+
+#testimoni {
+  background-color: var(--warna-satu);
+}
+
+#tentang {
+  background-color: var(--warna-tiga);
+}
+
+.footer {
+  background-color: var(--warna-satu);
+}
+
+.galeri {
+  background-color: var(--warna-tiga);
+}
+
+.title-galeri {
+  color: var(--warna-lima);
+}
+
+.tombol-galeri {
+  color: white;
+  background-color: var(--warna-dua);
+  border-radius: 20px;
+}
+
+.tombol-galeri:hover {
+  background-color: var(--warna-empat);
+}
+
+.tombol-galeri a {
+  text-decoration: none;
+  color: white;
+  font-size: x-large;
+  font-weight: bold;
+}
