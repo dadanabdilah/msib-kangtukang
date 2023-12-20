@@ -32,9 +32,6 @@ const login = async (req, res) => {
         res.json({ msg: "Password salah", status: false });
       }
     }
-    if (if) {
-      
-    }
     res.json({ msg: "Berhasil masuk", status: true });
   } catch (error) {
     console.error(error);
