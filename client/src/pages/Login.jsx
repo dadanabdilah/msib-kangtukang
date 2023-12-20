@@ -1,6 +1,3 @@
-import React, { useState } from 'react';
-import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
 import { Container, Form, Row, Col } from "react-bootstrap";
 import "../App.css";
 import { useState } from "react";
@@ -11,7 +8,6 @@ import axios from "axios";
 import { loginRoute } from "../utils/APIRoutes";
 
 export default function Login() {
-<<<<<<< HEAD
   const navigate = useNavigate();
 
   //useState
@@ -67,28 +63,6 @@ export default function Login() {
       console.error("Error submitting form:", error);
     }
   };
-=======
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [loginStatus, setLoginStatus] = useState('');
-  const navigate = useNavigate();
-
-  const handleLogin = async (e) => {
-    e.preventDefault();
-    try {
-      const response = await axios.post('http://localhost:5000/api/auth/login', { email, password });
-      if (response.data.status === 'success') {
-        setLoginStatus(response.data.status);
-        navigate('/'); // change '/dashboard' to your desired route
-      }else{
-        setLoginStatus(response.data.status);
-      }
-    } catch (error) {
-      setLoginStatus('error');
-    }
-  };
-
->>>>>>> 1bd0420244dc228db061add496127eaa43458ffe
   return (
     <>
       <section
@@ -107,7 +81,6 @@ export default function Login() {
                   <h2>Masuk</h2>
                 </Col>
               </Row>
-<<<<<<< HEAD
               <Form className="px-5" onSubmit={(e) => handleSubmit(e)}>
                 <Form.Group className="mb-3" controlId="formGroupEmail">
                   <Form.Label>Email</Form.Label>
@@ -129,22 +102,6 @@ export default function Login() {
                   <button type="submit" className="btn-CariTukang rounded">
                     Masuk
                   </button>
-=======
-              <Form className="px-5" onSubmit={handleLogin}>
-                <Form.Group className="mb-3" controlId="formGroupEmail">
-                  <Form.Label>Email</Form.Label>
-                  <input type="text" className="form-control" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email" />
-                </Form.Group>
-                <Form.Group className="mb-5" controlId="formGroupPassword">
-                  <Form.Label>Password</Form.Label>
-                   <input type="password" className="form-control" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Password" />
-                </Form.Group>
-                <Form.Group className="mb-5" controlId="formGroupPassword">
-                  {loginStatus === 'success' && <p>Login berhasil!</p>}
-                  {loginStatus === 'failed' && <p>Login gagal. Silakan coba lagi.</p>}
-                
-                  <button type="submit" className="btn-CariTukang rounded">Masuk</button>
->>>>>>> 1bd0420244dc228db061add496127eaa43458ffe
                   <a href="/register" className="btn-JadiMitra rounded">
                     Daftar
                   </a>
