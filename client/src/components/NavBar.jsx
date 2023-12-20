@@ -1,13 +1,12 @@
 import { Container, Navbar, Nav, Image } from "react-bootstrap";
-import { Link } from "react-router-dom";
 import logo from "../assets/img/logo.png";
 import "../App.css";
 import { useEffect, useState } from "react";
 import "../pages/Home";
 
+// eslint-disable-next-line react/prop-types
 export default function NavBar() {
   const [scrolled, setScrolled] = useState(false);
-
   useEffect(() => {
     const handleScroll = () => {
       const isScrolled = window.scrollY > 0;
@@ -30,32 +29,32 @@ export default function NavBar() {
         fixed="top"
       >
         <Container>
-          <Navbar.Brand href="#">
+          <Navbar.Brand href="/home">
             <Image src={logo} />
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="justify-content-end fw-semibold w-100 py-1">
               <Nav.Link
-                href="/"
+                href="/home"
                 style={{ color: scrolled ? "white" : "black" }}
               >
                 Home
               </Nav.Link>
               <Nav.Link
-                href="/#layanan"
+                href="#layanan"
                 style={{ color: scrolled ? "white" : "black" }}
               >
                 Layanan
               </Nav.Link>
               <Nav.Link
-                href="/#testimoni"
+                href="#testimoni"
                 style={{ color: scrolled ? "white" : "black" }}
               >
                 Testimoni
               </Nav.Link>
               <Nav.Link
-                href="/#tentang"
+                href="#tentang"
                 style={{ color: scrolled ? "white" : "black" }}
               >
                 Tentang
@@ -72,12 +71,6 @@ export default function NavBar() {
               >
                 Cari Tukang
               </Nav.Link>
-              <Link
-                to="/login"
-                className="btn-Masuk border border-light rounded"
-              >
-                Masuk
-              </Link>
             </Nav>
           </Navbar.Collapse>
         </Container>

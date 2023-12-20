@@ -13,20 +13,24 @@ async function getUsers() {
   return rows[0];
 }
 
-async function getUserByName(nama) {
+async function getUserByName(nama, email) {
   const [rows, fields] = await connection.execute(
-    "SELECT * FROM pengguna WHERE nama = ?",
-    [nama]
+    "SELECT * FROM pengguna WHERE nama = ? OR email = ?",
+    [nama, email]
   );
   return rows[0];
 }
 
 async function createUser(user) {
-  const [result] = await connection.execute(
-    "INSERT INTO pengguna (nama, email, no_hp, password, tipe) VALUES (?, ?, ?, ?, ?)",
-    [user.nama, user.email, user.no_hp, user.password, user.tipe]
-  );
-  return result.insertId;
+  try {
+    const [result] = await connection.execute(
+      "INSERT INTO pengguna (nama, email, jenisAkun, password, alamat) VALUES (?, ?, ?, ?, ?)",
+      [user.nama, user.email, user.jenisAkun, user.password, user.alamat]
+    );
+    return result.insertId;
+  } catch (error) {
+    console.error("Terjadi error", error);
+  }
 }
 
 async function updateUser(id, user) {
