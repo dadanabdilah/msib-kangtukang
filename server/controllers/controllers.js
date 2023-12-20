@@ -1,4 +1,4 @@
-const { createUser, getUserByName } = require("../models/model");
+const { createUser, getUserByName, getUsers, getLogin } = require("../models/model");
 
 const register = async (req, res) => {
   try {
@@ -14,12 +14,16 @@ const register = async (req, res) => {
 
 const login = async (req, res) => {
   try {
-    const userName = req.params.nama;
-    const user = await getUserByName(userName);
-    res.json({ id: user, message: "Berhasil masuk" });
+    const userName = req.body;
+    const user = await getLogin(userName);
+    if(user == null) {
+      res.status(200).json({ status : 'failed', data : '', error: "Gagal masuk" });
+    } else {
+      res.json({ status: 'success', data : user , message: "Berhasil masuk" });
+    }
   } catch (error) {
     console.error(error);
-    res.status(500).json({ error: "Gagal masuk" });
+    res.status(500).json({ status : 'failed', data : '', error: "Gagal masuk" });
   }
 };
 

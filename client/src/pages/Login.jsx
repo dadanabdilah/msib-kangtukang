@@ -1,7 +1,30 @@
+import React, { useState } from 'react';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 import { Container, Form, Row, Col } from "react-bootstrap";
 import "../App.css";
 
 export default function Login() {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [loginStatus, setLoginStatus] = useState('');
+  const navigate = useNavigate();
+
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.post('http://localhost:5000/api/auth/login', { email, password });
+      if (response.data.status === 'success') {
+        setLoginStatus(response.data.status);
+        navigate('/'); // change '/dashboard' to your desired route
+      }else{
+        setLoginStatus(response.data.status);
+      }
+    } catch (error) {
+      setLoginStatus('error');
+    }
+  };
+
   return (
     <>
       <section className="login d-flex align-items-center container-fluid" style={{width: "100vw", height: "100vh"}}>
@@ -17,19 +40,20 @@ export default function Login() {
                   <h2>Masuk</h2>
                 </Col>
               </Row>
-              <Form className="px-5">
+              <Form className="px-5" onSubmit={handleLogin}>
                 <Form.Group className="mb-3" controlId="formGroupEmail">
                   <Form.Label>Email</Form.Label>
-                  <Form.Control type="email" />
+                  <input type="text" className="form-control" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email" />
                 </Form.Group>
                 <Form.Group className="mb-5" controlId="formGroupPassword">
                   <Form.Label>Password</Form.Label>
-                  <Form.Control type="password" />
+                   <input type="password" className="form-control" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Password" />
                 </Form.Group>
                 <Form.Group className="mb-5" controlId="formGroupPassword">
-                  <a href="/" className="btn-CariTukang rounded">
-                    Masuk
-                  </a>
+                  {loginStatus === 'success' && <p>Login berhasil!</p>}
+                  {loginStatus === 'failed' && <p>Login gagal. Silakan coba lagi.</p>}
+                
+                  <button type="submit" className="btn-CariTukang rounded">Masuk</button>
                   <a href="/register" className="btn-JadiMitra rounded">
                     Daftar
                   </a>
