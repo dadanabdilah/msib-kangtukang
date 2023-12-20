@@ -1,3 +1,6 @@
+import React, { useState } from 'react';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 import { Container, Form, Row, Col } from "react-bootstrap";
 import "../App.css";
 import { useState } from "react";
@@ -8,6 +11,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 export default function Register() {
+<<<<<<< HEAD
   const navigate = useNavigate();
 
   //useState
@@ -76,6 +80,29 @@ export default function Register() {
       }
     } catch (error) {
       console.error("Error submitting form:", error);
+=======
+  const [nama, setNama] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [tipe, setTipe] = useState('');
+  const [no_hp, setNoHP] = useState('');
+  
+  const [registerResponse, setRegisterResponse] = useState('');
+  const navigate = useNavigate();
+  
+  const handleRegister  = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.post('http://localhost:5000/api/auth/register', { nama, email, no_hp, password, tipe});
+      if (response.data.status === 'success') {
+        setRegisterResponse(response.data);
+        navigate('/login');
+      }else{
+        setRegisterResponse(response.data);
+      }
+    } catch (error) {
+      setRegisterResponse('error');
+>>>>>>> 1bd0420244dc228db061add496127eaa43458ffe
     }
   };
 
@@ -95,6 +122,7 @@ export default function Register() {
                     <h2>Daftar</h2>
                   </Col>
                 </Row>
+<<<<<<< HEAD
                 <Form className="px-5" onSubmit={(e) => handleSubmit(e)}>
                   <Form.Group className="mb-3" controlId="nama">
                     <Form.Label>Nama</Form.Label>
@@ -103,22 +131,41 @@ export default function Register() {
                       onChange={(e) => handleChange(e)}
                       name="nama"
                     />
+=======
+                <Form className="px-5" onSubmit={handleRegister}>
+                  <Form.Group className="mb-3" controlId="formGroupNama">
+                    <Form.Label>Nama</Form.Label>
+                    <Form.Control type="text" value={nama} onChange={(e) => setNama(e.target.value)} />
+                  </Form.Group>
+                  <Form.Group className="mb-3" controlId="formGroupNoHP">
+                    <Form.Label>No HP</Form.Label>
+                    <Form.Control type="text" value={no_hp} onChange={(e) => setNoHP(e.target.value)} />
+>>>>>>> 1bd0420244dc228db061add496127eaa43458ffe
                   </Form.Group>
                   <Form.Group className="mb-3" controlId="email">
                     <Form.Label>Email</Form.Label>
+<<<<<<< HEAD
                     <Form.Control
                       type="email"
                       onChange={(e) => handleChange(e)}
                       name="email"
                     />
+=======
+                    <Form.Control type="text" value={email} onChange={(e) => setEmail(e.target.value)} />
+>>>>>>> 1bd0420244dc228db061add496127eaa43458ffe
                   </Form.Group>
                   <Form.Group controlId="jenisAkun" className="mb-3">
                     <Form.Label>Jenis akun</Form.Label>
+<<<<<<< HEAD
                     <Form.Select
                       value={values.jenisAkun}
                       onChange={(e) => handleChange(e)}
                       name="jenisAkun"
                     >
+=======
+                    <Form.Select defaultValue="Pengguna" value={tipe} onChange={(e) => setTipe(e.target.value)}>
+                      <option>Pilih</option>
+>>>>>>> 1bd0420244dc228db061add496127eaa43458ffe
                       <option>Pengguna</option>
                       <option>Mitra</option>
                     </Form.Select>
@@ -129,6 +176,7 @@ export default function Register() {
                     onChange={(e) => handleChange(e)}
                   >
                     <Form.Label>Password</Form.Label>
+<<<<<<< HEAD
                     <Form.Control type="password" name="password" />
                   </Form.Group>
                   <Form.Group
@@ -142,6 +190,18 @@ export default function Register() {
                       type="text"
                       name="alamat"
                     />
+=======
+                    <Form.Control type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+                  </Form.Group>
+                  <Form.Group className="mb-5" controlId="formGroupPassword">
+                    {registerResponse.status === 'success' && <p>{registerResponse.message}</p>}
+                    {registerResponse.status === 'failed' && <p>{registerResponse.message}</p>}
+
+                    <button type="submit" className="btn-CariTukang rounded">Daftar</button>
+                    <a href="/masuk" className="btn-JadiMitra rounded">
+                      Masuk
+                    </a>
+>>>>>>> 1bd0420244dc228db061add496127eaa43458ffe
                   </Form.Group>
                   <button type="submit" className="btn-CariTukang rounded">
                     Masuk

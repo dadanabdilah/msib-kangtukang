@@ -48,10 +48,17 @@ async function deleteUser(id) {
   return result.affectedRows > 0;
 }
 
+async function getLogin(loginData) {
+  const [rows, fields] = await connection.execute("SELECT * FROM pengguna WHERE email = ? AND password = ?", [loginData.email, loginData.password]);
+  return rows[0];
+}
+
+
 module.exports = {
   getUsers,
   getUserByName,
   createUser,
   updateUser,
   deleteUser,
+  getLogin,
 };
