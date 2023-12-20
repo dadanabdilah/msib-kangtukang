@@ -20,7 +20,7 @@ export default function Register() {
       const response = await axios.post('http://localhost:5000/api/auth/register', { nama, email, no_hp, password, tipe});
       if (response.data.status === 'success') {
         setRegisterResponse(response.data);
-        navigate('/masuk');
+        navigate('/login');
       }else{
         setRegisterResponse(response.data);
       }
