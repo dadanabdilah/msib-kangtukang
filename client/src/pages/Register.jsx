@@ -1,7 +1,34 @@
+import React, { useState } from 'react';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 import { Container, Form, Row, Col } from "react-bootstrap";
 import "../App.css";
 
 export default function Register() {
+  const [nama, setNama] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [tipe, setTipe] = useState('');
+  const [no_hp, setNoHP] = useState('');
+  
+  const [registerResponse, setRegisterResponse] = useState('');
+  const navigate = useNavigate();
+  
+  const handleRegister  = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.post('http://localhost:5000/api/auth/register', { nama, email, no_hp, password, tipe});
+      if (response.data.status === 'success') {
+        setRegisterResponse(response.data);
+        navigate('/masuk');
+      }else{
+        setRegisterResponse(response.data);
+      }
+    } catch (error) {
+      setRegisterResponse('error');
+    }
+  };
+
   return (
     <>
       <Row className="login m-0">
@@ -18,36 +45,38 @@ export default function Register() {
                     <h2>Daftar</h2>
                   </Col>
                 </Row>
-                <Form className="px-5">
+                <Form className="px-5" onSubmit={handleRegister}>
                   <Form.Group className="mb-3" controlId="formGroupNama">
                     <Form.Label>Nama</Form.Label>
-                    <Form.Control type="text" />
+                    <Form.Control type="text" value={nama} onChange={(e) => setNama(e.target.value)} />
+                  </Form.Group>
+                  <Form.Group className="mb-3" controlId="formGroupNoHP">
+                    <Form.Label>No HP</Form.Label>
+                    <Form.Control type="text" value={no_hp} onChange={(e) => setNoHP(e.target.value)} />
                   </Form.Group>
                   <Form.Group className="mb-3" controlId="formGroupEmail">
                     <Form.Label>Email</Form.Label>
-                    <Form.Control type="email" />
+                    <Form.Control type="text" value={email} onChange={(e) => setEmail(e.target.value)} />
                   </Form.Group>
                   <Form.Group controlId="formGridJenisAkun" className="mb-3">
                     <Form.Label>Jenis akun</Form.Label>
-                    <Form.Select defaultValue="Pengguna">
+                    <Form.Select defaultValue="Pengguna" value={tipe} onChange={(e) => setTipe(e.target.value)}>
+                      <option>Pilih</option>
                       <option>Pengguna</option>
                       <option>Mitra</option>
                     </Form.Select>
                   </Form.Group>
                   <Form.Group className="mb-3" controlId="formGroupPassword">
                     <Form.Label>Password</Form.Label>
-                    <Form.Control type="password" />
-                  </Form.Group>
-                  <Form.Group className="mb-5" controlId="formGridAddress">
-                    <Form.Label>Address</Form.Label>
-                    <Form.Control placeholder="1234 Main St" type="text" />
+                    <Form.Control type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
                   </Form.Group>
                   <Form.Group className="mb-5" controlId="formGroupPassword">
-                    <a href="/login" className="btn-CariTukang rounded">
+                    {registerResponse.status === 'success' && <p>{registerResponse.message}</p>}
+                    {registerResponse.status === 'failed' && <p>{registerResponse.message}</p>}
+
+                    <button type="submit" className="btn-CariTukang rounded">Daftar</button>
+                    <a href="/masuk" className="btn-JadiMitra rounded">
                       Masuk
-                    </a>
-                    <a href="#" className="btn-JadiMitra rounded">
-                      Daftar
                     </a>
                   </Form.Group>
                 </Form>

@@ -5,10 +5,13 @@ const register = async (req, res) => {
     const newUser = req.body;
 
     const user = await createUser(newUser);
-    res.json({ id: user, message: "Berhasil mendaftar" });
+    if(user == null) {
+      res.status(200).json({ status : 'failed', data : '', error: "Gagal melakukan pendaftaran" });
+    } else {
+      res.json({ status: 'success', data : user , message: "Berhasil melakukan pendaftaran" });
+    }
   } catch (error) {
-    console.error(error);
-    res.status(500).json({ error: "Gagal mendaftar" });
+    res.status(200).json({ status : 'failed', data : '', message : "Gagal melakukan pendaftaran. Silakan hubungi admnistrator.", error: error});
   }
 };
 
@@ -23,7 +26,7 @@ const login = async (req, res) => {
     }
   } catch (error) {
     console.error(error);
-    res.status(500).json({ status : 'failed', data : '', error: "Gagal masuk" });
+    res.status(200).json({ status : 'failed', data : '', message: "Gagal masuk. Silakan hubungi admnistrator.", error: error });
   }
 };
 
