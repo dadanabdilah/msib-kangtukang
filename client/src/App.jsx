@@ -5,6 +5,7 @@ import { Routes, Route } from "react-router-dom";
 import Galeri from "./pages/Galeri";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+import OrderMitra from "./pages/OrderMitra";
 
 export default function App() {
   return (
@@ -14,6 +15,7 @@ export default function App() {
         <Route path="/galeri" element={<Galeri />} />
         <Route path="/" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/mitra" element={<OrderMitra />} />
       </Routes>
     </>
   );

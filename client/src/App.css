@@ -106,3 +106,9 @@
   left: 0;
   right: 0;
 }
+
+#order {
+  background-color: #F3F8FF;
+  width: 100vw;
+  height: 100vh;
+}
