@@ -143,9 +143,14 @@ export default function Register() {
                       name="alamat"
                     />
                   </Form.Group>
-                  <button type="submit" className="btn-CariTukang rounded">
-                    Masuk
-                  </button>
+                  <Form.Group className="mb-5">
+                    <button type="submit" className="btn-CariTukang rounded">
+                      Daftar
+                    </button>
+                    <a href="/login" className="btn-JadiMitra rounded">
+                      Masuk
+                    </a>
+                  </Form.Group>
                 </Form>
               </Col>
             </Row>
