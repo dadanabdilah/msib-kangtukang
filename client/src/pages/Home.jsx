@@ -37,7 +37,7 @@ export default function Home() {
                   >
                     Cari Tukang
                   </Link>
-                  <Link to="#" className="btn-JadiMitra py-2 rounded">
+                  <Link to="/register" className="btn-JadiMitra py-2 rounded">
                     Jadi Mitra
                   </Link>
                 </Col>
