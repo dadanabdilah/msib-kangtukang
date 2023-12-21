@@ -34,13 +34,13 @@ function CariTukang() {
                 <Card.Img variant="top" src={tukang} />
                 <Card.Body className="text-center">
                   <Card.Text>
-                    <b>Nama :</b>{" "}
+                    <b>Nama :</b>{"Mustofa"}
                   </Card.Text>
                   <Card.Text>
-                    <b>Profesi :</b>{" "}
+                    <b>Profesi :</b>{" Tukang Cat Kayu"}
                   </Card.Text>
                   <Card.Text>
-                    <b>Lokasi :</b>
+                    <b>Lokasi :</b>{"Tanjungpinang"}
                   </Card.Text>
                   <Card.Link href="#" className="btn-CariTukang mx-0 rounded py-2">
                     Hubungi
