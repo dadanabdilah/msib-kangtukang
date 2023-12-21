@@ -1,4 +1,5 @@
 import { Container, Navbar, Nav, Image } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import logo from "../assets/img/logo.png";
 import "../App.css";
 import { useEffect, useState } from "react";
@@ -36,7 +37,7 @@ export default function NavBar() {
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="justify-content-end fw-semibold w-100 py-1">
               <Nav.Link
-                href="/home"
+                href="/"
                 style={{ color: scrolled ? "white" : "black" }}
               >
                 Home
@@ -71,6 +72,12 @@ export default function NavBar() {
               >
                 Cari Tukang
               </Nav.Link>
+              <Link
+                to="/login"
+                className="btn-CariTukang border border-light py-2 rounded"
+              >
+                Masuk
+              </Link>
             </Nav>
           </Navbar.Collapse>
         </Container>

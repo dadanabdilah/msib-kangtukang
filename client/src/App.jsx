@@ -11,9 +11,9 @@ export default function App() {
   return (
     <>
       <Routes>
-        <Route path="/home" element={<Home />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/galeri" element={<Galeri />} />
-        <Route path="/" element={<Login />} />
+        <Route path="/" element={<Home />} />
         <Route path="/register" element={<Register />} />
         <Route path="/mitra" element={<OrderMitra />} />
       </Routes>
