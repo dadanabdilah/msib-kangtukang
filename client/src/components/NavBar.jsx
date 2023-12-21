@@ -66,7 +66,7 @@ export default function NavBar() {
                 Galeri
               </Nav.Link>
               <Nav.Link
-                href="#"
+                href="/caritukang"
                 style={{ color: scrolled ? "white" : "black" }}
               >
                 Cari Tukang

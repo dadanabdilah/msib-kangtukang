@@ -6,6 +6,7 @@ import Galeri from "./pages/Galeri";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import OrderMitra from "./pages/OrderMitra";
+import CariTukang from "./pages/CariTukang";
 
 export default function App() {
   return (
@@ -16,6 +17,7 @@ export default function App() {
         <Route path="/" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/mitra" element={<OrderMitra />} />
+        <Route path="/caritukang" element={<CariTukang/>}/>
       </Routes>
     </>
   );
